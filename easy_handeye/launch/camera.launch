@@ -1,0 +1,15 @@
+<launch>
+  <!-- (start your robot's MoveIt! stack, e.g. include its moveit_planning_execution.launch) -->
+  <!-- (start your tracking system's ROS driver) -->
+
+  <include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
+    <arg name="tf_prefix" value="camera"/>
+    <arg name="publish_tf" value="true"/>
+  </include>
+
+  <!-- <include file="$(find aruco_ros)/launch/single.launch">
+    <arg name="markerId" value="520"/>
+    <arg name="markerSize" value="0.0397"/>
+  </include> -->
+
+</launch>

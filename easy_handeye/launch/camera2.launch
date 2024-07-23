@@ -1,0 +1,18 @@
+<launch>
+  <!-- (start your robot's MoveIt! stack, e.g. include its moveit_planning_execution.launch) -->
+  <!-- (start your tracking system's ROS driver) -->
+
+
+  <!-- <include file="$(find aruco_ros)/launch/single.launch">
+    <arg name="markerId" value="520"/>
+    <arg name="markerSize" value="0.039"/>
+    <arg name="camera_frame" value="camera_color_optical_frame"/>
+  </include> -->
+
+  	<include file ="$(find aruco_detect)/launch/aruco_detect.launch" >
+  		<arg name="camera" default="/camera/color"/> 
+  		<arg name="image" default="image_raw"/>
+  		<arg name="fiducial_len" default="0.039"/> 
+  	</include>
+
+</launch>
