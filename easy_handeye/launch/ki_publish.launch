@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <launch>
-  <node pkg="tf" type="static_transform_publisher" name="camera_to_optical_tf" args="1.0415624317552425 0.04864822242252387  0.6220445852897252 -0.6486759534887508 -0.703585262161078 0.1798557388865082 0.22768223344120433 panda_link0 camera_color_optical_frame 10" />
+  <!-- <node pkg="tf" type="static_transform_publisher" name="camera_to_optical_tf" args="1.0415624317552425 0.04864822242252387  0.6220445852897252 -0.6486759534887508 -0.703585262161078 0.1798557388865082 0.22768223344120433 panda_link0 camera_color_optical_frame 10" /> -->
+  	<include file ="$(find easy_handeye)/launch/publish.launch" >
+        <arg name="eye_on_hand" value="false"/>
+        <arg name="namespace_prefix" value="my_eob_calib"/>
+    <arg name="calibration_file" default="$(find easy_handeye)/my_eob_calib_eye_on_base.yaml"/> 
+  	</include>
 </launch>
 
